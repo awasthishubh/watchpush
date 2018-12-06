@@ -5,11 +5,8 @@ try{
     process.exit(1)
 }
 const config=require('./rebuild.json')
-start=require('./process.js').start
-restart=require('./process.js').restart
+({start,restart}=require('./process.js'))
 startserver=require('./server').start
 var pid=[], process=config.scripts
-
 start(process,pid,startserver)
-
 console.log(122323232,config);
