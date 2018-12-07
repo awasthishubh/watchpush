@@ -1,15 +1,36 @@
 {
-  "name": "autorebuild",
+  "name": "watchpush",
   "version": "1.0.0",
-  "description": "Easily rebuild app on linux server triggered with a push event",
+  "description": "Watch for push event on github repository and rebulild your app automatically",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "awasthishubh",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awasthishubh/watchpush.git"
+  },
+  "keywords": [
+    "build",
+    "rebuild",
+    "deploy",
+    "push",
+    "automatic",
+    "trigger",
+    "webhook",
+    "github",
+    "git"
+  ],
+  "bugs": {
+    "url": "https://github.com/awasthishubh/watchpush/issues"
+  },
+  "homepage": "https://github.com/awasthishubh/watchpush#readme"
 }

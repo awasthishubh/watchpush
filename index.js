@@ -1,9 +1,9 @@
+path=require('path')
 try{
-    require('./rebuild.json')
+    require(path.join(__dirname,'./rebuild.json'))
 } catch(e){
     throw e;
 }
-
 const config=require('./rebuild.json')
 var {start}=require('./process.js')
 
