@@ -5,7 +5,7 @@ var auth=require('./policies').verify
 
 function start(preProcesses,runScript,pid){
     app=express();
-    app.post('/', async function(req,res){
+    app.post('/',auth, async function(req,res){
         // console.log('Start script running on',pid);
         pid=await restartPros(preProcesses,runScript,pid);
         res.json('triggered')
