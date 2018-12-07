@@ -1,4 +1,4 @@
-var {secret}=require(path.join(process.cwd(),'./rebuild.json'))
+var {secret}=require(path.join(process.cwd(),'./watchpush.json'))
 const crypto=require('crypto')
 
 function verify(req,res, next){

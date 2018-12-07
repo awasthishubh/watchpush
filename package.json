@@ -1,6 +1,6 @@
 {
   "name": "watchpush",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Watch for push event on github repository and rebulild your app automatically",
   "main": "cli.js",
   "scripts": {

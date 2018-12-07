@@ -2,11 +2,11 @@
 
 path=require('path')
 try{
-    require(path.join(process.cwd(),'./rebuild.json'))
+    require(path.join(process.cwd(),'./watchpush.json'))
 } catch(e){
     throw e;
 }
-const config=require(path.join(process.cwd(),'./rebuild.json'))
+const config=require(path.join(process.cwd(),'./watchpush.json'))
 var {start}=require(path.join(__dirname,'./process.js'))
 
 console.log(typeof(start))
