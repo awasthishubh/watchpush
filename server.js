@@ -1,10 +1,12 @@
 const express=require('express')
-const config=require('./rebuild.json')
+const config=require(path.join(process.cwd(),'./rebuild.json'))
 var restartPros=require('./process.js').restart
 var auth=require('./policies').verify
+var bodyParser = require('body-parser')
 
 function start(preProcesses,runScript,pid){
     app=express();
+    app.use(bodyParser.json())
     app.post('/',auth, async function(req,res){
         // console.log('Start script running on',pid);
         pid=await restartPros(preProcesses,runScript,pid);

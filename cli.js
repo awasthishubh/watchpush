@@ -1,11 +1,13 @@
+#!/usr/bin/env node
+
 path=require('path')
 try{
-    require(path.join(__dirname,'./rebuild.json'))
+    require(path.join(process.cwd(),'./rebuild.json'))
 } catch(e){
     throw e;
 }
-const config=require('./rebuild.json')
-var {start}=require('./process.js')
+const config=require(path.join(process.cwd(),'./rebuild.json'))
+var {start}=require(path.join(__dirname,'./process.js'))
 
 console.log(typeof(start))
 var pid=0, preProcesses=config.preProcesses, runScript=config.runScript;

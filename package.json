@@ -1,11 +1,14 @@
 {
   "name": "watchpush",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Watch for push event on github repository and rebulild your app automatically",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
+  },
+  "bin": {
+    "watchpush": "./cli.js"
   },
   "author": "awasthishubh",
   "license": "ISC",

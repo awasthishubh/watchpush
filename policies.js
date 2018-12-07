@@ -1,5 +1,5 @@
-var {secret}=require('./rebuild.json')
-
+var {secret}=require(path.join(process.cwd(),'./rebuild.json'))
+const crypto=require('crypto')
 
 function verify(req,res, next){
     var hmac = crypto.createHmac("sha1", secret);
