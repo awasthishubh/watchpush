@@ -1,14 +1,13 @@
 const express=require('express')
 const config=require('./rebuild.json')
-var restart=require('./process.js').restart
+var restartPros=require('./process.js').restart
 var auth=require('./policies').verify
 
-async function start(pid, prs){
+function start(preProcesses,runScript,pid){
     app=express();
-
-    app.post('/', auth, function(req,res){
-        console.log(pid, prs);
-        ({pid,prs}=await restart(pid,prs));
+    app.post('/', async function(req,res){
+        // console.log('Start script running on',pid);
+        pid=await restartPros(preProcesses,runScript,pid);
         res.json('triggered')
     })
 
@@ -21,11 +20,11 @@ async function start(pid, prs){
             throw err;
         }
         else{
-            console.log('Listening to push triggers on port ' + config.port)
+            console.log('\n\x1b[35mListening to push triggers on port \x1b[32m' + config.port+'\n')
         }
     })
 }
 
-module.export={
+module.exports={
     start
 }

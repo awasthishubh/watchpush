@@ -2,11 +2,14 @@ try{
     require('./rebuild.json')
 } catch(e){
     throw e;
-    process.exit(1)
 }
+
 const config=require('./rebuild.json')
-({start,restart}=require('./process.js'))
-startserver=require('./server').start
-var pid=[], process=config.scripts
-start(process,pid,startserver)
-console.log(122323232,config);
+var {start}=require('./process.js')
+
+console.log(typeof(start))
+var pid=0, preProcesses=config.preProcesses, runScript=config.runScript;
+(async ()=>{
+    pid=await start(preProcesses,runScript)
+    startserver=require('./server').start(preProcesses,runScript,pid)
+})()
