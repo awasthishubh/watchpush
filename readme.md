@@ -10,7 +10,7 @@ watchpull #run application
 
 ## Configuration
 `watchpush.json` file is required in the root directory of your application
-It contains following configurations
+It contains following configurations:-
 ``` javascript
 {
     "name": "Name of your project",
